@@ -1,0 +1,54 @@
+name: Validate Skills
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    name: Validate skill structure
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check SKILL.md exists in each skill directory
+        run: |
+          ERRORS=0
+          for dir in */; do
+            skill="${dir%/}"
+            [[ "$skill" == ".github" || "$skill" == "scripts" ]] && continue
+            if [ ! -f "$skill/SKILL.md" ]; then
+              echo "❌ SKILL.md manquant : $skill/"
+              ERRORS=$((ERRORS + 1))
+            else
+              echo "✅ $skill/SKILL.md"
+            fi
+          done
+          [ $ERRORS -eq 0 ] || exit 1
+
+      - name: Check references files are under 150 lines
+        run: |
+          ERRORS=0
+          while IFS= read -r -d '' file; do
+            lines=$(wc -l < "$file")
+            if [ "$lines" -gt 150 ]; then
+              echo "❌ Fichier trop long ($lines lignes) : $file"
+              ERRORS=$((ERRORS + 1))
+            else
+              echo "✅ $file ($lines lignes)"
+            fi
+          done < <(find . -path "./.github" -prune -o -path "./scripts" -prune -o -name "*.md" -not -name "SKILL.md" -not -name "README.md" -print0)
+          [ $ERRORS -eq 0 ] || exit 1
+
+      - name: Generate skills index
+        run: |
+          echo "## Skills index — $(date '+%Y-%m-%d')"
+          for dir in */; do
+            skill="${dir%/}"
+            [[ "$skill" == ".github" || "$skill" == "scripts" ]] && continue
+            refs=$(find "$skill/references" -name "*.md" 2>/dev/null | wc -l)
+            echo "- **$skill** — $refs fichier(s) references/"
+          done
