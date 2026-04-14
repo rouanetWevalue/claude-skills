@@ -20,7 +20,7 @@ Pas de limite stricte. Favoriser les PRs courtes et ciblées :
 ## Process
 
 1. **Self-review** obligatoire avant de demander une review externe — relire son diff comme si on était reviewer
-2. La CI doit être verte avant de demander une review
+2. La CI doit être verte avant de demander une review (et le rester jusqu'au merge)
 3. Résoudre tous les commentaires avant de merger
 4. Ne jamais merger sans CI verte et approbation
 
