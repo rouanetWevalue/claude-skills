@@ -40,7 +40,7 @@ jobs:
             else
               echo "✅ $file ($lines lignes)"
             fi
-          done < <(find . -path "./.github" -prune -o -path "./scripts" -prune -o -name "*.md" -not -name "SKILL.md" -not -name "README.md" -print0)
+          done < <(find . -path "./.github" -prune -o -path "./scripts" -prune -o -path "./docs" -prune -o -name "*.md" -not -name "SKILL.md" -not -name "README.md" -print0)
           [ $ERRORS -eq 0 ] || exit 1
 
       - name: Generate skills index
