@@ -32,25 +32,31 @@ Les deux types peuvent coexister :
 
 ### État d'un prérequis
 
-Les `needs:` restent visibles jusqu'à ce que la tâche elle-même soit `[x]`.
-Ils sont marqués résolus au fur et à mesure :
+Chaque prérequis porte un statut explicite, identique à celui des tâches :
 
-- **Interne résolu** : le tag référencé est passé à `[x]` dans le fichier (état inféré automatiquement)
-- **Externe résolu** : préfixer l'entrée par `[x]` dans la ligne `needs:` une fois l'action réalisée
+| Préfixe | Signification |
+|---|---|
+| `[ ]` | Non résolu / non démarré |
+| `[~]` | En cours de résolution |
+| `[x]` | Résolu |
+
+- Les `needs:` restent visibles jusqu'à ce que la tâche elle-même soit `[x]`
+- Pour les prérequis **internes**, le statut peut aussi être inféré du tag référencé dans le fichier — le préfixe explicite reste recommandé pour la lisibilité
+- Pour les prérequis **externes**, le statut doit toujours être maintenu manuellement
 
 Exemple d'évolution :
 ```
-- [ ] Description — [TAG] Pniveau
-  needs: [x] [TAG-A], [x] "Créer l'espace de déploiement", "Fournir les credentials AWS"
+- [~] Description — [TAG] Pniveau (en cours — en attente de credentials)
+  needs: [x] [TAG-A], [~] "Créer l'espace de déploiement", [ ] "Fournir les credentials AWS"
 ```
-→ TAG-A résolu, déploiement fait, credentials toujours attendus.
+→ TAG-A résolu, déploiement en cours, credentials pas encore fournis.
 
 ### Règles de blocage
 
-- **Débloquée** : pas de `needs:`, ET tous les `[TAG]` internes sont `[x]`, ET tous les externes ont le préfixe `[x]`
-- **Bloquée interne** : au moins un `[TAG]` est `[ ]` ou `[~]`
-- **Bloquée externe** : au moins un prérequis entre guillemets sans préfixe `[x]`
-- Ne jamais ajouter `needs:` à une tâche déjà `[~]` ou `[x]`
+- **Débloquée** : tous les needs sont `[x]`
+- **Bloquée** : au moins un need est `[ ]` ou `[~]`
+- Ne jamais ajouter `needs:` à une tâche `[x]`
+- Ajouter `needs:` à une tâche `[~]` est autorisé : prérequis identifié en cours d'exécution, nécessaire pour finaliser
 
 ## Ajouter un TODO
 

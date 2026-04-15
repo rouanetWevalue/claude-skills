@@ -29,7 +29,7 @@ Même comportement que session start. Filtres disponibles :
 ### P1 — Important (N)
   [TAG] Description
   ⛔ [TAG] Description
-      ✅ [TAG-A]  ✅ "Créer l'espace de déploiement"  ⛔ "Fournir les credentials AWS"
+      ✅ [TAG-A]  ⏳ "Créer l'espace de déploiement"  ⛔ "Fournir les credentials AWS"
 
 ### P2 — Sprint suivant (N)
   [TAG] Description
@@ -51,8 +51,9 @@ Une tâche est **débloquée** si tous ses `needs:` sont résolus :
 
 Affichage des needs pour chaque tâche bloquée :
 - Lister **tous** les needs (résolus et non résolus) sur une ligne indentée
-- `✅ [TAG]` ou `✅ "..."` → résolu
-- `⛔ [TAG]` ou `⛔ "..."` → encore bloquant
+- `✅` → résolu (`[x]`)
+- `⏳` → en cours (`[~]`)
+- `⛔` → non résolu (`[ ]`)
 
 Règles d'affichage :
 - Section **"Débloqués — à traiter"** en premier, triée P0 → P3
