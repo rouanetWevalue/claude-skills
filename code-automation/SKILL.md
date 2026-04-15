@@ -40,7 +40,8 @@ description: >
 | JavaScript / Node.js / TypeScript | `references/lang-javascript.md` |
 | Bash / Shell | `references/lang-bash.md` |
 | HCL / Terraform | `references/lang-hcl.md` |
-| YAML / K8s / Helm / CI-CD | `references/lang-yaml.md` |
+| YAML / K8s / Helm | `references/lang-yaml.md` |
+| CI/CD (GitHub Actions, GitLab CI, pipelines) | `references/lang-yaml-cicd.md` |
 | Python | `references/lang-python.md` |
 | Dockerfile | `references/lang-docker.md` |
 | HTML / CSS / Jinja2 | `references/lang-web.md` |
