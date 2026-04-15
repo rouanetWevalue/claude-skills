@@ -13,19 +13,20 @@ Une tâche est débloquée si elle n'a pas de `needs:` ou si tous les tags réf�
 > Vision : ce repo devient le référentiel versionné de l'ensemble du profil Claude utilisateur.
 > Trois catégories synchronisées vers `~/.claude/` : **skills**, **hooks**, **agents**.
 
-- [ ] Définir la structure cible du repo : dossiers `skills/`, `hooks/`, `agents/` à la racine + `scripts/` + `.claude/` (settings projet uniquement) — [ARCH-REPO-STRUCT] P0
-- [ ] Migrer les skills existants sous `skills/` et adapter `sync-to-claude.sh` / `sync-from-claude.sh` en conséquence — [ARCH-MIGRATE-SKILLS] P0
+- [x] Définir la structure cible du repo : dossiers `skills/`, `hooks/`, `agents/` à la racine + `scripts/` + `.claude/` (settings projet uniquement) — [ARCH-REPO-STRUCT] P0
+- [x] Migrer les skills existants sous `skills/` et adapter `sync-to-claude.sh` / `sync-from-claude.sh` en conséquence — [ARCH-MIGRATE-SKILLS] P0
   needs: [ARCH-REPO-STRUCT]
-- [ ] Migrer les hooks utilisateur (`.claude/hooks/`) sous `hooks/` et adapter les scripts de sync — [ARCH-MIGRATE-HOOKS] P0
+- [x] Migrer les hooks utilisateur (`.claude/hooks/`) sous `hooks/` et adapter les scripts de sync — [ARCH-MIGRATE-HOOKS] P0
   needs: [ARCH-REPO-STRUCT]
-- [ ] Créer la structure `agents/` et étendre les scripts de sync pour synchroniser vers `~/.claude/agents/` — [ARCH-AGENTS-DIR] P0
+- [x] Créer la structure `agents/` et étendre les scripts de sync pour synchroniser vers `~/.claude/agents/` — [ARCH-AGENTS-DIR] P0
   needs: [ARCH-REPO-STRUCT]
 - [ ] Généraliser `protect-main` et `skill-sync-reminder` au niveau utilisateur (`~/.claude/settings.json`) pour couvrir tous les projets — [ARCH-GLOBAL-HOOKS] P0
   needs: [ARCH-MIGRATE-HOOKS]
-- [ ] Mettre à jour la CI pour valider la nouvelle structure (`skills/*/SKILL.md`, `hooks/`, `agents/`) — [ARCH-CI] P1
+- [x] Mettre à jour la CI pour valider la nouvelle structure (`skills/*/SKILL.md`, `hooks/`, `agents/`) — [ARCH-CI] P1
   needs: [ARCH-MIGRATE-SKILLS]
-- [ ] Documenter la procédure d'onboarding complète (clone → install-hooks → sync-to-claude → CLAUDE_SKILLS_PATH) — [ARCH-ONBOARDING] P1
+- [x] Documenter la procédure d'onboarding complète (clone → install-hooks → sync-to-claude → CLAUDE_SKILLS_PATH) — [ARCH-ONBOARDING] P1
   needs: [ARCH-GLOBAL-HOOKS]
+- [ ] Vérifier si le README et CLAUDE.md nécessitent une mise à jour lors de la finalisation d'une branche, et traiter si nécessaire — [ARCH-DOC-CHECK] P2
 
 ---
 

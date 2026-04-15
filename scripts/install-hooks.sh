@@ -7,7 +7,7 @@
 set -euo pipefail
 
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-HOOKS_SRC="$REPO_ROOT/scripts/git-hooks"
+HOOKS_SRC="$REPO_ROOT/hooks/git"
 HOOKS_DEST="$REPO_ROOT/.git/hooks"
 
 echo "Installation des hooks git..."
