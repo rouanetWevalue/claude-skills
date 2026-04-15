@@ -11,9 +11,9 @@ try {
 } catch(e) { process.stdout.write(''); }
 " <<< "$INPUT")
 
-# Verifier si le fichier appartient a un skill (SKILL.md ou references/*.md)
-if echo "$FILE" | grep -qE '(SKILL\.md$|[/\\]references[/\\][^/\\]+\.md$)'; then
-  MSG="Skill modifie - Pensez a synchroniser avec votre profil local :\n  ./scripts/sync-from-claude.sh"
+# Verifier si le fichier appartient a un skill (skills/**/SKILL.md ou skills/**/references/*.md)
+if echo "$FILE" | grep -qE '(skills/.*SKILL\.md$|skills/.*/references/[^/\\]+\.md$)'; then
+  MSG="Skill modifie - Pensez a synchroniser avec votre profil local :\n  ./scripts/sync-to-claude.sh"
   node -e "process.stdout.write(JSON.stringify({systemMessage: process.argv[1]}) + '\n')" -- "$MSG"
 fi
 

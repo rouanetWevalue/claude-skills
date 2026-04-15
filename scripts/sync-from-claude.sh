@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # sync-from-claude.sh — Resynchronise les skills personnels depuis Claude vers ce repo.
 # Les skills organisation sont exclus (source : CLAUDE_ORG_PATH).
+# Si un skill existe deja dans skills/ (quel que soit son chemin thematique), il est mis a jour en place.
+# Sinon, il est cree dans skills/ (plat, a reorganiser manuellement si besoin).
 #
 # Usage : ./scripts/sync-from-claude.sh
 # Env   : CLAUDE_SKILLS_PATH  (defaut : /mnt/skills/user)
@@ -12,6 +14,7 @@ shopt -s nullglob
 SKILLS_SOURCE="${CLAUDE_SKILLS_PATH:-/mnt/skills/user}"
 ORG_SOURCE="${CLAUDE_ORG_PATH:-/mnt/skills/organization}"
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+SKILLS_ROOT="$REPO_ROOT/skills"
 
 if [ ! -d "$SKILLS_SOURCE" ]; then
   echo "Source introuvable : $SKILLS_SOURCE"
@@ -29,7 +32,7 @@ fi
 
 echo "Source       : $SKILLS_SOURCE"
 echo "Exclus (org) : ${ORG_SKILLS[*]:-<aucun>}"
-echo "Destination  : $REPO_ROOT"
+echo "Destination  : $SKILLS_ROOT"
 echo ""
 
 SYNCED=0
@@ -42,11 +45,20 @@ for skill_dir in "$SKILLS_SOURCE"/*/; do
     continue
   fi
 
+  # Chercher si ce skill existe deja dans skills/ (quel que soit le sous-dossier thematique)
+  existing=$(find "$SKILLS_ROOT" -maxdepth 3 -type d -name "$skill_name" 2>/dev/null | head -1)
+  if [ -n "$existing" ]; then
+    dest="$existing"
+  else
+    dest="$SKILLS_ROOT/$skill_name"
+    echo "(nouveau) $skill_name → skills/$skill_name"
+  fi
+
   # Copie propre : supprime la destination puis recopie (equivalent rsync --delete)
-  rm -rf "$REPO_ROOT/$skill_name"
-  cp -rp "$skill_dir" "$REPO_ROOT/$skill_name"
+  rm -rf "$dest"
+  cp -rp "$skill_dir" "$dest"
   # Supprimer les .DS_Store eventuels
-  find "$REPO_ROOT/$skill_name" -name '.DS_Store' -delete 2>/dev/null || true
+  find "$dest" -name '.DS_Store' -delete 2>/dev/null || true
   echo "OK $skill_name"
   SYNCED=$((SYNCED + 1))
 done
