@@ -8,6 +8,56 @@
 
 Exemple : `- [ ] Configurer le backup ChromaDB — [BACKUP] P2`
 
+## Prérequis optionnels (needs:)
+
+Deux types de prérequis, combinables sur la même ligne :
+
+**Interne** — autre TODO du projet, identifié par son tag :
+```
+- [ ] Description — [TAG] Pniveau
+  needs: [AUTRE-TAG]
+```
+
+**Externe** — action hors du projet (identifiants, décision, accès, arbitrage) :
+```
+- [ ] Description — [TAG] Pniveau
+  needs: "Whitelister l'URL en prod"
+```
+
+Les deux types peuvent coexister :
+```
+- [ ] Description — [TAG] Pniveau
+  needs: [TAG-A], "Fournir les credentials AWS", [TAG-B]
+```
+
+### État d'un prérequis
+
+Chaque prérequis porte un statut explicite, identique à celui des tâches :
+
+| Préfixe | Signification |
+|---|---|
+| `[ ]` | Non résolu / non démarré |
+| `[~]` | En cours de résolution |
+| `[x]` | Résolu |
+
+- Les `needs:` restent visibles jusqu'à ce que la tâche elle-même soit `[x]`
+- Pour les prérequis **internes**, le statut peut aussi être inféré du tag référencé dans le fichier — le préfixe explicite reste recommandé pour la lisibilité
+- Pour les prérequis **externes**, le statut doit toujours être maintenu manuellement
+
+Exemple d'évolution :
+```
+- [~] Description — [TAG] Pniveau (en cours — en attente de credentials)
+  needs: [x] [TAG-A], [~] "Créer l'espace de déploiement", [ ] "Fournir les credentials AWS"
+```
+→ TAG-A résolu, déploiement en cours, credentials pas encore fournis.
+
+### Règles de blocage
+
+- **Débloquée** : tous les needs sont `[x]`
+- **Bloquée** : au moins un need est `[ ]` ou `[~]`
+- Ne jamais ajouter `needs:` à une tâche `[x]`
+- Ajouter `needs:` à une tâche `[~]` est autorisé : prérequis identifié en cours d'exécution, nécessaire pour finaliser
+
 ## Ajouter un TODO
 
 1. Si section, tag ou priorité manquants → demander avant d'écrire

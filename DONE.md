@@ -9,6 +9,13 @@ Archives des tâches complétées. Format :
 
 ## 2026-04-15
 
+### [GTODO] gestion-todo — évolutions du skill (PR #14)
+
+- [x] Ajouter syntaxe `needs: [TAG]` dans `references/edit.md` : format, règles débloqué/bloqué — [GTODO-FORMAT] [GTODO-EDIT]
+- [x] Mettre à jour `references/consult.md` : section "Débloqués — à traiter" + marqueur ⛔ pour tâches bloquées — [GTODO-CONSULT]
+- [x] Ajouter matrice Eisenhower dans `references/triage.md` — [GTODO-EISENHOWER]
+- [x] Ajouter protocole rétrospective DONE.md dans `references/archive.md` — [GTODO-RETRO]
+
 ### [ARCH] Architecture globale — restructuration repo (PR #6)
 
 - [x] Définir la structure cible du repo : `skills/`, `hooks/`, `agents/`, `scripts/`, `.claude/` — [ARCH-REPO-STRUCT]

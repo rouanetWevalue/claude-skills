@@ -26,6 +26,30 @@ Si la section archivée provient d'un sous-fichier `[ref]` :
 Avant d'écrire, afficher : "Section [TAG] complète — archivage dans DONE.md. Confirmer ?"
 Sauf si `auto_confirm: true`.
 
+## Rétrospective DONE.md
+
+Déclencheur : demande explicite (`"analyse DONE.md"`, `"rétrospective"`) ou lors d'un triage global.
+
+Procédure :
+1. Lire `DONE.md` et regrouper les tâches archivées par période (mois) et par tag
+2. Calculer pour chaque catégorie :
+   - Nombre de tâches complétées
+   - Proportion P0/P1 (réactivité) vs P2/P3 (avancement planifié)
+3. Identifier les patterns récurrents :
+   - Tags avec beaucoup de P0 → domaine fragile ou sous-investi
+   - Sections jamais complètes → dépendances bloquantes non résolues
+   - Tâches rouvertes plusieurs fois → instabilité de vision
+4. Présenter un résumé en 3–5 points dans ce format :
+
+```
+## Rétrospective — [période]
+
+**Activité** : N tâches complétées — répartition : [TAG-A] N, [TAG-B] N
+**Points forts** : [domaines avec vélocité ou stabilité]
+**Points d'attention** : [domaines avec P0 récurrents ou blocages]
+**Recommandations** : [ajustements de priorité ou de découpage]
+```
+
 ## Format d'entrée dans DONE.md
 
 ```markdown

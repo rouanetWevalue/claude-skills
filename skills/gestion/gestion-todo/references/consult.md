@@ -19,23 +19,46 @@ Même comportement que session start. Filtres disponibles :
 ```
 ## TODOs ouverts — YYYY-MM-DD
 
+### Débloqués — à traiter (N)
+  P0 [TAG] Description
+  P1 [TAG] Description
+
 ### P0 — Bloquant (N)
-  [TAG] Description de la tâche
+  [TAG] Description
 
 ### P1 — Important (N)
-  [TAG] Description de la tâche
+  [TAG] Description
+  ⛔ [TAG] Description
+      ✅ [TAG-A]  ⏳ "Créer l'espace de déploiement"  ⛔ "Fournir les credentials AWS"
 
 ### P2 — Sprint suivant (N)
-  [TAG] Description de la tâche
+  [TAG] Description
 
 ### P3 — Backlog (N)
-  [TAG] Description de la tâche
+  [TAG] Description
 
 ### Sections archivables
   [TAG] — toutes les tâches [x]
 ```
 
 Si aucune tâche ouverte : afficher `Aucun TODO ouvert.`
+
+## Règle débloqué / bloqué
+
+Une tâche est **débloquée** si tous ses `needs:` sont résolus :
+- `[TAG]` interne → résolu quand ce tag est `[x]` dans le fichier
+- `"..."` externe → résolu quand préfixé `[x]` dans la ligne `needs:`
+
+Affichage des needs pour chaque tâche bloquée :
+- Lister **tous** les needs (résolus et non résolus) sur une ligne indentée
+- `✅` → résolu (`[x]`)
+- `⏳` → en cours (`[~]`)
+- `⛔` → non résolu (`[ ]`)
+
+Règles d'affichage :
+- Section **"Débloqués — à traiter"** en premier, triée P0 → P3
+- Tâches bloquées dans leurs sections de priorité : préfixées `⛔`, needs listés en dessous
+- Si aucune tâche débloquée : `Toutes les tâches ouvertes sont bloquées par des prérequis.`
 
 ## Sous-fichiers
 

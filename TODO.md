@@ -32,15 +32,6 @@ Une tâche est débloquée si elle n'a pas de `needs:` ou si tous les tags réf�
 
 ## Skills
 
-### [GTODO] gestion-todo — évolutions du skill
-
-- [ ] Ajouter les blocs prérequis optionnels `needs: [TAG]` dans le format de tâche — [GTODO-FORMAT] P1
-- [ ] Mettre à jour `references/consult.md` : afficher séparément les TODOs débloqués (sans needs ou needs tous [x]) — [GTODO-CONSULT] P1
-  needs: [GTODO-FORMAT]
-- [ ] Mettre à jour `references/edit.md` : documenter la syntaxe `needs:` — [GTODO-EDIT] P2
-  needs: [GTODO-FORMAT]
-- [ ] Ajouter Eisenhower matrix (urgence × importance) dans `references/triage.md` — [GTODO-EISENHOWER] P3
-- [ ] Analyser les patterns des TODOs archivés (rétrospective DONE.md) dans `references/archive.md` — [GTODO-RETRO] P3
 
 ### [CAUTO] code-automation — améliorations
 

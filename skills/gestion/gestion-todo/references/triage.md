@@ -26,6 +26,20 @@ Ne jamais réévaluer systématiquement. Déclencher uniquement sur événement.
    ```
 4. Attendre confirmation avant d'appliquer les changements
 
+## Matrice Eisenhower (urgence × importance)
+
+Grille de correspondance avec les niveaux P0–P3 :
+
+|                   | Urgent                        | Non urgent                       |
+|---|---|---|
+| **Important**     | **P0** — Traiter maintenant   | **P1** — Planifier               |
+| **Non important** | **P2** — Déléguer ou grouper  | **P3** — Backlog / éliminer      |
+
+Utilisation lors d'un triage :
+1. Pour chaque tâche réévaluée, poser les deux questions : "Important ?" et "Urgent ?"
+2. Mapper le quadrant vers P0–P3
+3. Appliquer ensuite la règle anti-inflation P0 ci-dessous
+
 ## Règle anti-inflation P0
 
 Maximum 2-3 tâches P0 simultanément.
