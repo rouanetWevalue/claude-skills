@@ -18,7 +18,10 @@ description: >
 | Recherche factuelle simple, définition, date, version | `claude-haiku-4-5` |
 | Comparaison d'options, benchmark, veille | `claude-haiku-4-5` |
 | Synthèse de documentation longue ou complexe | `claude-sonnet-4-6` |
-| Analyse de compromis techniques avec recommandation | `claude-sonnet-4-6` |
+| Analyse de compromis techniques avec recommandation | `claude-opus-4-6` ¹ |
+
+¹ **opusplan** — `claude-opus-4-6` avec extended thinking activé si disponible.
+  Fallback si indisponible : `claude-opus-4-6` → `claude-sonnet-4-6`.
 
 ---
 

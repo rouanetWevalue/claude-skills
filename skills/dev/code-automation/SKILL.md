@@ -17,9 +17,12 @@ description: >
 |---|---|---|
 | **Simple** | Transform YAML/JSON, snippet <30 lignes, reformatage, Dockerfile cosmétique | `claude-haiku-4-5` |
 | **Standard** | Script autonome, refacto ciblée, config infra connue, pipeline CI/CD classique, debug d'erreur claire | `claude-sonnet-4-6` |
-| **Complexe** | Nouvelle architecture, debug multi-fichiers ambigu, système distribué, adaptation maquette complète | `claude-sonnet-4-6` |
+| **Complexe** | Nouvelle architecture, debug multi-fichiers ambigu, système distribué, adaptation maquette complète, revue sécurité | `claude-opus-4-6` ¹ |
 
 > En cas de doute → Sonnet. Haiku uniquement si la tâche est mécaniquement triviale.
+
+¹ **opusplan** — `claude-opus-4-6` avec extended thinking activé si disponible.
+  Fallback si indisponible : `claude-opus-4-6` → `claude-sonnet-4-6`.
 
 ---
 

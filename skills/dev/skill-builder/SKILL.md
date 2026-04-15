@@ -26,13 +26,16 @@ Présenter les résultats de l'audit à l'utilisateur et obtenir sa validation a
 
 | Phase | Modèle | Raison |
 |---|---|---|
-| Conception (routing, architecture, choix références) | `claude-sonnet-4-6` | Jugement requis — décisions d'organisation non mécaniques |
+| Conception (routing, architecture, choix références) | `claude-opus-4-6` ¹ | Méta-raisonnement — décisions structurantes sur le skill lui-même |
 | Rédaction de la description YAML | `claude-sonnet-4-6` | Formulation précise, couverture de synonymes, CSO |
 | Rédaction des fichiers `references/` | `claude-sonnet-4-6` | Si contenu nouveau à conceptualiser |
 | Rédaction des fichiers `references/` | `claude-haiku-4-5` | Si transformation / reformatage de contenu existant |
 | Validation / checklist pré-PR | `claude-haiku-4-5` | Vérification mécanique de conformité |
 
 > Doute sur la phase ? → Sonnet.
+
+¹ **opusplan** — `claude-opus-4-6` avec extended thinking activé si disponible.
+  Fallback si indisponible : `claude-opus-4-6` → `claude-sonnet-4-6`.
 
 ---
 

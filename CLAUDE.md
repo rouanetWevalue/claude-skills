@@ -69,7 +69,7 @@ skill-name/
 
 ## Key Conventions
 
-- **Model stratification**: Haiku for extraction/CRUD, Sonnet for reasoning. Default to Sonnet when uncertain.
+- **Model stratification**: Haiku (extraction/CRUD) → Sonnet (reasoning/analysis) → Opus/opusplan (high-stakes judgment: architecture, decomposition, multi-doc synthesis, risk analysis). Default to Sonnet when uncertain. Opus = `claude-opus-4-6` with extended thinking; fallback to `claude-opus-4-6` → `claude-sonnet-4-6` if unavailable.
 - **150-line hard limit** on all reference files — enforced by CI. If a reference grows beyond this, split it.
 - **Language**: All skill content is written in French.
 - **SKILL.md frontmatter**: Must include `name` and `description` YAML fields.

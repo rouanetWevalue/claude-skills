@@ -19,7 +19,10 @@ description: >
 | Rédaction de message Slack simple | `claude-haiku-4-5` |
 | Synthèse de l'avancement projet | `claude-haiku-4-5` |
 | Préparation de compte rendu ou rapport de projet | `claude-sonnet-4-6` |
-| Analyse de risques ou décision d'organisation | `claude-sonnet-4-6` |
+| Analyse de risques ou décision d'organisation | `claude-opus-4-6` ¹ |
+
+¹ **opusplan** — `claude-opus-4-6` avec extended thinking activé si disponible.
+  Fallback si indisponible : `claude-opus-4-6` → `claude-sonnet-4-6`.
 
 ---
 
