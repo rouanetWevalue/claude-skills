@@ -110,3 +110,15 @@ When editing references, verify line count stays ≤ 150 (`wc -l references/your
 
 - **Claude Code hooks** (PostToolUse, PreToolUse, etc.) go in `hooks/claude/` and must be referenced in `.claude/settings.json`
 - **Git hooks** go in `hooks/git/` and are installed locally via `./scripts/install-hooks.sh`
+
+## Closing a Branch (OBLIGATOIRE avant PR)
+
+Avant d'ouvrir une PR ou de déclarer un travail terminé, vérifier systématiquement :
+
+1. **TODO.md** — marquer `[x]` toutes les tâches réalisées dans cette branche
+2. **DONE.md** — archiver les items `[x]` avec la date et le numéro de PR
+   - Si une section de TODO.md est entièrement `[x]` → déplacer la section complète dans DONE.md
+   - Sinon → lister les items individuels dans DONE.md sous la date du jour
+3. **README.md / CLAUDE.md** — mettre à jour si la structure, les conventions ou les workflows ont changé
+
+> Ces trois points sont toujours requis. Ne pas les sauter même pour une "petite PR".
