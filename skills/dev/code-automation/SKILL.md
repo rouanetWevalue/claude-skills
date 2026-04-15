@@ -32,6 +32,8 @@ description: >
 | Nouveau projet / nouvelle fonctionnalité significative | `references/architecture.md` |
 | Debug ou refactoring | `references/debug-refacto.md` |
 | Toute implémentation | `references/tdd.md` |
+| Sécurité, revue SAST, OWASP, injection, vulnérabilité | `references/security-sast.md` |
+| Génération HTML/React/Tailwind depuis description ou maquette | `references/frontend-artifacts.md` |
 
 ### Par langage détecté
 

@@ -9,6 +9,13 @@ Archives des tâches complétées. Format :
 
 ## 2026-04-15
 
+### [CAUTO] code-automation — TDD, sécurité, frontend (PR #15)
+
+- [x] Enrichir `references/tdd.md` : cycle red-green-refactor détaillé + section test doubles (Stub/Mock/Spy/Fake/Dummy) — [CAUTO-TDD]
+- [x] Créer `references/security-sast.md` : OWASP Top 10 mappé sur patterns code, injection SQL/command/XSS, checklist revue sécurité — [CAUTO-SEC]
+- [x] Créer `references/frontend-artifacts.md` : workflow description→artefact, React patterns, Tailwind courants, accessibilité — [CAUTO-FRONT]
+- [x] Mettre à jour `SKILL.md` : routing vers `security-sast.md` et `frontend-artifacts.md`
+
 ### [GTODO] gestion-todo — évolutions du skill (PR #14)
 
 - [x] Ajouter syntaxe `needs: [TAG]` dans `references/edit.md` : format, règles débloqué/bloqué — [GTODO-FORMAT] [GTODO-EDIT]

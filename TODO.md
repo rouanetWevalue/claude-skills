@@ -35,10 +35,10 @@ Une tâche est débloquée si elle n'a pas de `needs:` ou si tous les tags réf�
 
 ### [CAUTO] code-automation — améliorations
 
-- [ ] Enrichir `references/tdd.md` : protocole red-green-refactor complet + test doubles — [CAUTO-TDD] P1
+- [x] Enrichir `references/tdd.md` : protocole red-green-refactor complet + test doubles — [CAUTO-TDD] P1
 - [ ] Ajouter `references/lang-sql-postgres.md` : PostgreSQL best practices, indexing, migrations — [CAUTO-SQL] P2
-- [ ] Ajouter `references/security-sast.md` : SAST, injection testing, OWASP top 10 — [CAUTO-SEC] P2
-- [ ] Ajouter `references/frontend-artifacts.md` : génération HTML/React/Tailwind depuis description — [CAUTO-FRONT] P2
+- [x] Ajouter `references/security-sast.md` : SAST, injection testing, OWASP top 10 — [CAUTO-SEC] P2
+- [x] Ajouter `references/frontend-artifacts.md` : génération HTML/React/Tailwind depuis description — [CAUTO-FRONT] P2
 - [ ] Ajouter `references/lang-aws.md` : CDK, Lambda, microservices patterns — [CAUTO-AWS] P3
 - [ ] Ajouter `references/serverless-agents.md` : patterns agents stateful, Cloudflare Durable Objects — [CAUTO-SERVERLESS] P3
 
