@@ -8,6 +8,21 @@ Une tâche est débloquée si elle n'a pas de `needs:` ou si tous les tags réf�
 
 ---
 
+## [ARCH] architecture globale — hooks & skills utilisateur
+
+- [ ] Généraliser le hook `protect-main` au niveau utilisateur (`~/.claude/settings.json`) pour couvrir tous les projets présents et futurs — [ARCH-PROTECT-MAIN] P0
+  > Actuellement scopé au projet claude-skills-repo uniquement. Tout autre projet est non protégé.
+- [ ] Définir l'architecture cible pour les hooks utilisateur : dossier `~/.claude/hooks/` versionné, référencé depuis `~/.claude/settings.json` — [ARCH-HOOKS-DIR] P0
+  needs: [ARCH-PROTECT-MAIN]
+- [ ] Revoir la structure du repo pour versionner séparément `skills/` et `hooks/` utilisateur (actuellement mélangés dans `.claude/`) — [ARCH-REPO-STRUCT] P0
+  needs: [ARCH-HOOKS-DIR]
+- [ ] Mettre à jour `sync-to-claude.sh` et `sync-from-claude.sh` pour synchroniser aussi les hooks utilisateur (pas seulement les skills) — [ARCH-SYNC-HOOKS] P0
+  needs: [ARCH-REPO-STRUCT]
+- [ ] Documenter la procédure d'installation complète (clone → install-hooks → sync-to-claude → configurer CLAUDE_SKILLS_PATH) — [ARCH-ONBOARDING] P1
+  needs: [ARCH-SYNC-HOOKS]
+
+---
+
 ## [GTODO] gestion-todo — évolutions du skill
 
 - [ ] Ajouter les blocs prérequis optionnels `needs: [TAG]` dans le format de tâche — [GTODO-FORMAT] P1
