@@ -11,8 +11,11 @@ try {
 } catch(e) { process.stdout.write(''); }
 " <<< "$INPUT")
 
+# Normaliser les backslashes Windows en forward slashes avant le test
+FILE_NORM=$(echo "$FILE" | tr '\\' '/')
+
 # Verifier si le fichier appartient a un skill ou a un agent
-if echo "$FILE" | grep -qE '(skills/.*SKILL\.md$|skills/.*/references/[^/\\]+\.md$|agents/.*/AGENT\.md$)'; then
+if echo "$FILE_NORM" | grep -qE '(skills/.*SKILL\.md$|skills/.*/references/[^/]+\.md$|agents/.*/AGENT\.md$)'; then
   MSG="Skill ou agent modifie - Pensez a synchroniser avec votre profil local :\n  ./scripts/sync-to-claude.sh"
   node -e "process.stdout.write(JSON.stringify({systemMessage: process.argv[1]}) + '\n')" -- "$MSG"
 fi
