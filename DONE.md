@@ -46,6 +46,10 @@ Archives des tâches complétées. Format :
 
 - [x] Corriger la regex du hook `skill-sync-reminder.sh` : normaliser les backslashes Windows avant le test grep
 
+### [HOOK-PROTECT-DEFAULT-BRANCH] Hook protect-main — branche par défaut générique (PR #13)
+
+- [x] Remplacer la détection codée en dur (`main`) par `git symbolic-ref refs/remotes/origin/HEAD` avec fallback sur les noms courants (`master`, `trunk`, `develop`)
+
 ### [ARCH-GLOBAL-HOOKS] Hooks utilisateur globaux — généralisation (PR #12)
 
 - [x] Déplacer `protect-main.sh` vers `hooks/user/` (synchronisé vers `~/.claude/hooks/`)
