@@ -20,13 +20,14 @@ echo "$CMD" | grep -qE '^git push(\s|$)' || exit 0
 
 REASON=""
 
-# Cas 1 : 'main' mentionne explicitement dans la commande
-if echo "$CMD" | grep -qE '\bmain\b'; then
-  REASON="Push direct sur main interdit. Creer une branche feature/* et ouvrir une PR."
-
-# Cas 2 : une branche non-main explicite est presente (contient un /) -> laisser passer
-elif echo "$CMD" | grep -qE '\b[a-zA-Z0-9_-]+/[a-zA-Z0-9_/-]+\b'; then
+# Cas 1 : une branche non-main explicite est presente (contient un /) -> laisser passer
+# (traite en premier pour eviter les faux positifs sur les noms de branche contenant 'main')
+if echo "$CMD" | grep -qE '\b[a-zA-Z0-9_-]+/[a-zA-Z0-9_/-]+\b'; then
   exit 0
+
+# Cas 2 : 'main' mentionne explicitement comme branche cible
+elif echo "$CMD" | grep -qE '\bmain\b'; then
+  REASON="Push direct sur main interdit. Creer une branche feature/* et ouvrir une PR."
 
 # Cas 3 : pas de branche specifiee, verifier si on est sur main
 else
