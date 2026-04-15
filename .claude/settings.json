@@ -1,24 +1,12 @@
 {
   "hooks": {
-    "PreToolUse": [
-      {
-        "matcher": "Bash",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "bash hooks/claude/protect-main.sh",
-            "statusMessage": "Verification protection main..."
-          }
-        ]
-      }
-    ],
     "PostToolUse": [
       {
         "matcher": "Write|Edit",
         "hooks": [
           {
             "type": "command",
-            "command": "bash hooks/claude/skill-sync-reminder.sh",
+            "command": "bash .claude/hooks/skill-sync-reminder.sh",
             "statusMessage": "Verification sync skill..."
           }
         ]
