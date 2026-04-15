@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# Hook git pre-push : bloque les push directs sur main.
+# Installer avec : ./scripts/install-hooks.sh
+
+CURRENT=$(git branch --show-current 2>/dev/null || true)
+
+if [ "$CURRENT" = "main" ]; then
+  echo ""
+  echo "Push direct sur main interdit."
+  echo "Creer une branche feature/* et ouvrir une PR."
+  echo ""
+  exit 1
+fi
+
+# Verifier aussi si la cible explicite est main
+while read local_ref local_sha remote_ref remote_sha; do
+  if echo "$remote_ref" | grep -qE 'refs/heads/main$'; then
+    echo ""
+    echo "Push direct sur main interdit (cible : $remote_ref)."
+    echo "Creer une branche feature/* et ouvrir une PR."
+    echo ""
+    exit 1
+  fi
+done
+
+exit 0
