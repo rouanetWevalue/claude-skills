@@ -54,7 +54,7 @@ skill-name/
 | Catégorie | Skill | Modèle | Description |
 |---|---|---|---|
 | `dev` | `code-automation` | Sonnet / Haiku | Dev, scripts, debug, IaC, CI/CD |
-| `dev` | `git-workflow` | Haiku / Sonnet | Branches, commits, PRs, revues |
+| `dev` | `git-workflow` | Haiku / Sonnet | Branches, commits, PRs, revues de code, worktrees |
 | `dev` | `skill-builder` | Sonnet | Conception et création de nouveaux skills |
 | `dev` | `orchestration-agents` | Sonnet / Opus | Décomposition et dispatch de tâches en parallèle |
 | `content` | `analyse-documents` | Haiku / Sonnet | Extraction, synthèse, Q&A sur documents |

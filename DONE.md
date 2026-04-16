@@ -7,6 +7,15 @@ Archives des tâches complétées. Format :
 
 ---
 
+## 2026-04-16 (2)
+
+### [GITWF] git-workflow — code-review-workflow + worktree (PR #19)
+
+- [x] Ajouter `references/code-review-workflow.md` : protocole équipe qui surcharge superpowers:requesting/receiving-code-review — 4 niveaux sévérité, anti-sycophanie, IaC/YAML, draft→ready, désaccord reviewer — [GITWF-REVIEW]
+- [x] Ajouter `references/worktree.md` : travail multi-branches humain, convention anti-collision `.worktrees/` (humain) vs `.claude/worktrees/` (agent réservé) — [GITWF-WORKTREE]
+
+---
+
 ## 2026-04-16
 
 ### Nouveaux skills + refactor gestion-projet (PR #17)
