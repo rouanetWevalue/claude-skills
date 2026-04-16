@@ -71,6 +71,7 @@ Une tâche est débloquée si elle n'a pas de `needs:` ou si tous les tags réf�
 
 - [x] Ajouter `references/code-review-workflow.md` : protocole demander + traiter une review — [GITWF-REVIEW] P2 (PR #19, 2026-04-16)
 - [x] Ajouter `references/worktree.md` : travail multi-branches en parallèle, convention anti-collision humain/agent — [GITWF-WORKTREE] P2 (PR #19, 2026-04-16)
+- [x] Ajouter `references/worktree-strategy.md` : stratégie de publication, schéma .worktree-config.md, règle PR cascadante, résolution de conflits — [GITWF-WORKTREE-STRAT] P2 (PR #19, 2026-04-16)
 - [ ] Ajouter `references/semver-changelog.md` : versioning sémantique, génération de CHANGELOG — [GITWF-SEMVER] P3
 
 ### [NEW] nouveaux skills à créer

@@ -13,6 +13,7 @@ Archives des tâches complétées. Format :
 
 - [x] Ajouter `references/code-review-workflow.md` : protocole équipe qui surcharge superpowers:requesting/receiving-code-review — 4 niveaux sévérité, anti-sycophanie, IaC/YAML, draft→ready, désaccord reviewer — [GITWF-REVIEW]
 - [x] Ajouter `references/worktree.md` : travail multi-branches humain, convention anti-collision `.worktrees/` (humain) vs `.claude/worktrees/` (agent réservé) — [GITWF-WORKTREE]
+- [x] Ajouter `references/worktree-strategy.md` : règle de scope, schéma `.worktree-config.md` (arbre N-niveaux, bidirectionnel), règle PR cascadante, configuration scope-split (ask/always/never), résolution conflits par impact — [GITWF-WORKTREE-STRAT]
 
 ---
 
