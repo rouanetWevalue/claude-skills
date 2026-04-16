@@ -7,6 +7,17 @@ Archives des tâches complétées. Format :
 
 ---
 
+## 2026-04-16
+
+### Nouveaux skills + refactor gestion-projet (PR #17)
+
+- [x] Créer skill `analyse-reunion` : analyse transcripts de réunion (résumé, décisions, actions owner+deadline, dynamiques de communication) — Haiku/Sonnet/Opus
+- [x] Créer skill `gestion-notion` : opérations Notion via MCP (pages CRUD, databases, blocs, recherche) — Haiku/Sonnet
+- [x] Refactorer `gestion-projet` : retirer Notion du scope (Option B), rediriger vers `gestion-notion` — [GPROJ-MEETING] superseded
+- [x] Mettre à jour CLAUDE.md : tableau des skills + 3 nouveaux items TODO (ARCH-MCP-CONFIG, NEW-SLACK-PUSH, NEW-SCOPE-GUARD)
+
+---
+
 ## 2026-04-15
 
 ### [CAUTO] code-automation — TDD, sécurité, frontend (PR #15)

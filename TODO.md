@@ -53,7 +53,7 @@ Une tâche est débloquée si elle n'a pas de `needs:` ou si tous les tags réf�
 ### [GPROJ] gestion-projet — améliorations
 
 - [ ] Ajouter `references/strategie-produit.md` : OKRs, roadmap, discovery frameworks, métriques SaaS — [GPROJ-STRAT] P2
-- [~] Ajouter `references/meeting-insights.md` : extraire décisions, actions, contexte de réunions — [GPROJ-MEETING] P2 (superseded — remplacé par skill `analyse-reunion` en cours de création)
+- [x] Ajouter `references/meeting-insights.md` : extraire décisions, actions, contexte de réunions — [GPROJ-MEETING] P2 (superseded — remplacé par skill `analyse-reunion`, PR #17, 2026-04-16)
 - [ ] Ajouter `references/linear.md` : gestion tickets Linear, workflows, intégration GitHub — [GPROJ-LINEAR] P3
 
 ### [REDAC] redaction — améliorations

@@ -13,10 +13,12 @@ claude-skills-repo/
 │   │   └── git-workflow/       ← Branches, commits, PRs, revues
 │   ├── content/
 │   │   ├── analyse-documents/  ← Extraction, synthèse, Q&A sur documents
+│   │   ├── analyse-reunion/    ← Analyse de transcripts : résumé, actions, dynamiques
 │   │   ├── recherche-synthese/ ← Veille, recherche web, comparaisons
 │   │   └── redaction/          ← Emails, rapports, documentation
 │   └── gestion/
-│       ├── gestion-projet/     ← Notion, Slack, tâches, suivi
+│       ├── gestion-notion/     ← Opérations Notion via MCP : pages, databases, blocs
+│       ├── gestion-projet/     ← Slack, suivi projet, comptes rendus (Notion → gestion-notion)
 │       └── gestion-todo/       ← Lecture, édition, triage, archivage TODO.md
 ├── hooks/
 │   ├── user/                   ← Hooks Claude Code synchronisés vers ~/.claude/hooks/
@@ -56,9 +58,11 @@ skill-name/
 | `dev` | `skill-builder` | Sonnet | Conception et création de nouveaux skills |
 | `dev` | `orchestration-agents` | Sonnet / Opus | Décomposition et dispatch de tâches en parallèle |
 | `content` | `analyse-documents` | Haiku / Sonnet | Extraction, synthèse, Q&A sur documents |
+| `content` | `analyse-reunion` | Haiku / Sonnet / Opus | Analyse transcripts : résumé, décisions, actions, dynamiques |
 | `content` | `recherche-synthese` | Haiku / Sonnet | Veille, recherche web, comparaisons |
 | `content` | `redaction` | Sonnet | Emails, rapports, documentation |
-| `gestion` | `gestion-projet` | Haiku / Sonnet | Notion, Slack, tâches, suivi |
+| `gestion` | `gestion-notion` | Haiku / Sonnet | Opérations Notion via MCP : pages, databases, blocs, recherche |
+| `gestion` | `gestion-projet` | Haiku / Sonnet / Opus | Slack, suivi projet, comptes rendus (Notion → gestion-notion) |
 | `gestion` | `gestion-todo` | Haiku / Sonnet | Lecture, édition, triage, archivage TODO.md |
 
 ## Agents disponibles
