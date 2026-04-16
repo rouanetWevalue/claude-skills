@@ -16,7 +16,10 @@ Le signal de taille est `scope-size: large` dans le `.worktree-config.md`.
 
 ---
 
-## 2. Comportement sur scope large (`scope-size: large`)
+## 2. Comportement sur scope large (`scope-size: large`) — `claude-opus-4-6`
+
+> Évaluer si un scope est large et proposer un découpage sont des décisions architecturales.
+> Une mauvaise coupe crée des dépendances impossibles entre branches — Opus requis.
 
 Trois modes configurables via `scope-split` :
 
@@ -91,9 +94,10 @@ Les ancêtres bloqués créent leur PR en **draft** :
 
 ---
 
-## 5. Résolution de conflits entre branches
+## 5. Résolution de conflits entre branches — `claude-opus-4-6`
 
-Pas de règle systématique — analyse par impact.
+> Optimisation multi-variables (criticité + cascade + impact croisé) — Opus requis.
+> Pas de règle systématique — analyse par impact.
 
 **Étapes :**
 
