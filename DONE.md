@@ -9,16 +9,40 @@ Archives des tâches complétées. Format :
 
 ## 2026-04-20
 
-### [CV] Skills de génération de CV — 4 skills (PR #TBD)
+### [CV] Pipeline complet d'optimisation de profil LinkedIn — 14 skills (PR #TBD)
 
-Dossiers pré-scaffoldés dans le repo ; SKILL.md + references/ créés dans cette PR.
-Audit de planning réalisé en amont — skills pré-scopés par le demandeur.
+Audit public réalisé en amont. Architecture en 4 batches (dépendances respectées). MiKTeX installé. MCP Playwright enregistré.
 
-- [x] Créer skill `generation-cv-markdown` : génération CV Markdown depuis profil YAML normalisé, mode classique et orienté poste — `references/template.md` (template complet + bullets CAR)
-- [x] Créer skill `generation-cv-latex` : génération CV LaTeX (AltaCV ou moderncv), routing sur choix utilisateur — `references/template-altacv.md` + `references/template-moderncv.md`
-- [x] Créer skill `generation-cv-docx` : génération CV DOCX via python-docx, script Python complet — `references/python-docx-patterns.md` (helpers styles, en-tête, section expériences)
-- [x] Créer skill `generation-cv-ppt` : génération profil 1-pager PPT via python-pptx, 3 slides — `references/python-pptx-patterns.md` (slides titre/compétences, zone_texte, tableau)
-- [x] Mettre à jour CLAUDE.md : ajouter catégorie `cv` dans le tableau des skills
+**Couche 1 — Extraction (content/)**
+- [x] Créer skill `extraction-pdf` : extraction générique depuis tout PDF → schéma normalisé
+- [x] Créer skill `extraction-docx` : extraction générique depuis DOCX/PPT → schéma normalisé
+
+**Couche 2 — Normalisation + Extraction LinkedIn (cv/)**
+- [x] Créer skill `normalisation-profil` : schéma YAML standard commun à tous les skills CV
+- [x] Créer skill `extraction-linkedin` : copier/coller principal, URL via Playwright sur demande explicite uniquement
+
+**Couche 3 — Analyse (cv/)**
+- [x] Créer skill `exploration-cv` : interview Socratique, challenge expériences, format CAR
+- [x] Créer skill `analyse-marche-emploi` : benchmark salaires, tendances tech, demande marché (via recherche-synthese)
+- [x] Créer skill `scoring-pertinence-profil` : grille 6 dimensions, score 0-100 vs marché
+
+**Couche 4 — Optimisation (cv/)**
+- [x] Créer skill `audit-profil-linkedin` : 6 dimensions (complétude, CAR, narrative, pertinence, headline, signaux)
+- [x] Créer skill `optimisation-linkedin` : réécriture sections (headline 3 variantes, about, expériences CAR, skills ATS)
+
+**Couche 5 — Génération (cv/)**
+- [x] Créer skill `generation-cv-markdown` : CV Markdown, mode classique et orienté poste
+- [x] Créer skill `generation-cv-latex` : CV LaTeX (AltaCV ou moderncv)
+- [x] Créer skill `generation-cv-docx` : CV DOCX via python-docx (script Python complet)
+- [x] Créer skill `generation-cv-ppt` : profil 1-pager PPT via python-pptx (3 slides)
+- [x] Créer skill `generation-cv-pdf` : orchestration LaTeX→PDF ou DOCX→PDF
+
+**Infrastructure**
+- [x] Créer `mcps/` + `scripts/install-mcps.sh` : gestion des MCP servers via CLI Claude Code — [ARCH-MCP-CONFIG]
+- [x] Enregistrer MCP Playwright (scope utilisateur global) pour extraction LinkedIn via URL
+- [x] Installer MiKTeX (LaTeX) pour `generation-cv-latex` et `generation-cv-pdf`
+- [x] Mettre à jour README.md : section Prérequis (Python, LaTeX, Node) + MCPs + tableau 24 skills
+- [x] Mettre à jour CLAUDE.md : table Current Skills complète (14 nouveaux skills)
 
 ---
 
