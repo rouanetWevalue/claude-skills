@@ -1,0 +1,10 @@
+{
+  "name": "playwright",
+  "description": "Browser automation via Playwright — utilisé pour l'extraction de profils LinkedIn via URL et toute tâche nécessitant un navigateur headless",
+  "server": {
+    "command": "npx",
+    "args": ["@playwright/mcp@latest"]
+  },
+  "usedBy": ["extraction-linkedin"],
+  "requiredBy": "extraction-linkedin (chemin URL uniquement — le copier/coller reste le chemin principal recommandé)"
+}
