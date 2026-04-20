@@ -7,6 +7,21 @@ Archives des tâches complétées. Format :
 
 ---
 
+## 2026-04-20
+
+### [CV] Skills de génération de CV — 4 skills (PR #TBD)
+
+Dossiers pré-scaffoldés dans le repo ; SKILL.md + references/ créés dans cette PR.
+Audit de planning réalisé en amont — skills pré-scopés par le demandeur.
+
+- [x] Créer skill `generation-cv-markdown` : génération CV Markdown depuis profil YAML normalisé, mode classique et orienté poste — `references/template.md` (template complet + bullets CAR)
+- [x] Créer skill `generation-cv-latex` : génération CV LaTeX (AltaCV ou moderncv), routing sur choix utilisateur — `references/template-altacv.md` + `references/template-moderncv.md`
+- [x] Créer skill `generation-cv-docx` : génération CV DOCX via python-docx, script Python complet — `references/python-docx-patterns.md` (helpers styles, en-tête, section expériences)
+- [x] Créer skill `generation-cv-ppt` : génération profil 1-pager PPT via python-pptx, 3 slides — `references/python-pptx-patterns.md` (slides titre/compétences, zone_texte, tableau)
+- [x] Mettre à jour CLAUDE.md : ajouter catégorie `cv` dans le tableau des skills
+
+---
+
 ## 2026-04-16 (2)
 
 ### [GITWF] git-workflow — code-review-workflow + worktree (PR #19)

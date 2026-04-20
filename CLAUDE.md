@@ -68,6 +68,10 @@ skill-name/
 | `gestion` | `gestion-notion` | Notion operations via MCP: pages, databases, blocks, search |
 | `gestion` | `gestion-projet` | Slack workflows, project tracking, progress reports (Notion → gestion-notion) |
 | `gestion` | `gestion-todo` | TODO.md read, edit, triage, archive |
+| `cv` | `generation-cv-markdown` | Generate CV in Markdown (classic or job-targeted) |
+| `cv` | `generation-cv-latex` | Generate CV in LaTeX (AltaCV or moderncv) |
+| `cv` | `generation-cv-docx` | Generate CV DOCX via python-docx script |
+| `cv` | `generation-cv-ppt` | Generate 1-pager profile PPT via python-pptx script |
 
 ## Key Conventions
 
