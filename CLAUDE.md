@@ -68,10 +68,20 @@ skill-name/
 | `gestion` | `gestion-notion` | Notion operations via MCP: pages, databases, blocks, search |
 | `gestion` | `gestion-projet` | Slack workflows, project tracking, progress reports (Notion → gestion-notion) |
 | `gestion` | `gestion-todo` | TODO.md read, edit, triage, archive |
+| `content` | `extraction-pdf` | Generic structured extraction from PDF |
+| `content` | `extraction-docx` | Generic structured extraction from DOCX/PPT |
+| `cv` | `normalisation-profil` | Normalize raw profile data to standard YAML schema |
+| `cv` | `extraction-linkedin` | Extract LinkedIn profile (copy-paste primary, URL on request) |
+| `cv` | `exploration-cv` | Socratic interview, challenge experiences, CAR format |
+| `cv` | `analyse-marche-emploi` | Salary benchmarks, tech trends, job market demand |
+| `cv` | `scoring-pertinence-profil` | Score profile vs target market segment |
+| `cv` | `audit-profil-linkedin` | Identify gaps, weak sections, narrative inconsistencies |
+| `cv` | `optimisation-linkedin` | Rewrite LinkedIn sections (orchestrates `redaction`) |
 | `cv` | `generation-cv-markdown` | Generate CV in Markdown (classic or job-targeted) |
 | `cv` | `generation-cv-latex` | Generate CV in LaTeX (AltaCV or moderncv) |
 | `cv` | `generation-cv-docx` | Generate CV DOCX via python-docx script |
 | `cv` | `generation-cv-ppt` | Generate 1-pager profile PPT via python-pptx script |
+| `cv` | `generation-cv-pdf` | Generate CV PDF (via LaTeX or DOCX→PDF conversion) |
 
 ## Key Conventions
 
