@@ -11,7 +11,7 @@ dans le dictionnaire Python. Le template doit omettre le bloc correspondant
 
 ## classique
 
-Champs à vérifier dans le profil YAML (demander si absent) :
+Champs à vérifier dans le profil YAML (demander si absent(s)) :
 - `linkedin_url` : URL profil LinkedIn (ex : https://linkedin.com/in/prenom-nom)
 - `site_web` : portfolio ou site personnel (optionnel)
 
@@ -21,7 +21,7 @@ Photo : **non supportée** par ce template.
 
 ## moderne
 
-Champs à vérifier dans le profil YAML (demander si absent) :
+Champs à vérifier dans le profil YAML (demander si absent(s)) :
 - `linkedin_url` : URL profil LinkedIn
 - `site_web` : portfolio ou site personnel (optionnel)
 - `github_url` : profil GitHub (optionnel)
@@ -37,7 +37,7 @@ Photo : **optionnelle**.
 
 ## minimaliste
 
-Champs à vérifier dans le profil YAML (demander si absents) :
+Vérifier la présence dans `identite` (champs essentiels pour la lisibilité ATS — demander si absents) :
 - `email` : adresse email de contact
 - `telephone` : numéro de téléphone
 - `localisation` : ville et/ou pays
@@ -49,6 +49,8 @@ sont ignorées ou génèrent des erreurs de parsing).
 
 ## wevalue
 
+Champs à vérifier : à définir lors de l'implémentation (charte WeValue en attente).
+Photo : à définir.
+
 → Template en attente de la charte graphique WeValue.
-  Infos complémentaires à définir lors de l'implémentation du template.
   Voir `template-wevalue.md` pour les instructions.
