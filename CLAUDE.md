@@ -86,6 +86,9 @@ skill-name/
 | `cv` | `generation-cv-docx` | Multi-templates DOCX (classique, moderne, minimaliste, wevalue-stub) ; collecte unifiée ; parallélisation sous-agents |
 | `cv` | `generation-cv-ppt` | Generate 1-pager profile PPT via python-pptx script |
 | `cv` | `generation-cv-pdf` | Generate CV PDF (via LaTeX or DOCX→PDF conversion) |
+| `cv` | `audit-cv` | Évalue CV classique sur 6 dimensions, produit rapport `audit_cv` avec priorités |
+| `cv` | `optimisation-cv` | Améliore contenu CV (CAR, accroche, compétences) ; point d'entrée naturel pipeline classique |
+| `cv` | `ciblage-cv` | Adapte un CV optimisé pour une offre d'emploi ; produit YAML ciblé distinct |
 
 ## Key Conventions
 
