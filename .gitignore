@@ -4,3 +4,5 @@
 *.iml
 .claude/settings.local.json
 .claude/projects/
+.superpowers/
+.worktrees/
